@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
   int n;
-  int64_t ans, c = pow(10, 9) + 7, a = 1, b = 1, d = 1;
+  long long ans, c = pow(10, 9) + 7, a = 1, b = 1, d = 1;
 
   cin >> n;
   for (int i = 0; i < n; i++)
@@ -13,6 +13,7 @@ int main()
     b = b * 9 % c;
     d = d * 8 % c;
   }
+
   ans = (a - (2 * b % c) + d) % c;
   if (ans < 0)
     ans += c;
