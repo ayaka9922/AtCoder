@@ -1,7 +1,6 @@
 {
-  "workbench.colorTheme": "Monokai Dimmed",
   "code-runner.runInTerminal": true,
-  "workbench.sideBar.location": "left",
+  "editor.formatOnSave": true,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "code-runner.executorMap": {
