@@ -21,6 +21,6 @@ int main() {
       cnt.at(i)++;
     }
    }
-  cout << cnt.at(i) << endl;
+  cout << cnt.at(i) + 1 << endl;
   }
 }
