@@ -11,7 +11,7 @@ int main() {
     cnt++;
   }
   if (s == "RSR")
-    cnt == 1;
+    cnt = 1;
 
   cout << cnt << endl;
 
