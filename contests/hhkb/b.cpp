@@ -1,35 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int gcd(int n, int m) {
+	if(n < m) {
+    swap(n, m);
+    }
+	if(n % m == 0) {
+    return m;
+    }
+	return gcd(m, n % m);
+}
+
 int main() {
-  int h, w, cnt = 0;
-  cin >> h >> w;
-
-  vector<string> s(h);
-
-  for (int i = 0; i < h; i++){
-    cin >> s.at(i);
+	int N; cin >> N;
+	vector<int> a(N);
+	for(int i = 0; i < N; i++) {
+    cin >> a[i];
   }
-
-  // cout << s[1][1];
-
-  //横向き
-  for (int i = 0; i < h ; i++){
-    for (int j = 0; j < w - 1 ; j++){
-      if(s[i][j] == '.' && s[i][j + 1] == '.' ){
-      	cnt++;
-      }
+	int ans = a[0];
+	for(int i = 1; i < N; i++) {
+    ans= gcd(ans, a[i]);
     }
-  }
-  //縦向き
-  for (int i = 0; i < h - 1 ; i++){
-    for (int j = 0; j < w ; j++){
-      if(s[i][j] == '.' && s[i + 1][j] == '.' ){
-      	cnt++;
-      }
-    }
-  }
-  cout << cnt;
-
-
+	cout << ans << endl;
 }
