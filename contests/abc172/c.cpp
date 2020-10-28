@@ -22,7 +22,7 @@ int main() {
     if (suma[i] > k) {
       break;
     }else{
-      for(int j = m; j >= 0; j--){
+      for(int j = b_cnt; j >= 0; j--){
         if(suma[i] + sumb[j] <= k){
           ans = max(ans, i+j);
           b_cnt = j;
