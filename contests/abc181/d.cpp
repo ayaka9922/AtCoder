@@ -36,8 +36,10 @@ int main() {
 	sort(s.begin(), s.end());
 	int cnt[10] = {0};
 	for(int i = 0; i < (int)s.length(); i++){
-		int num = s[i] - '0';
+		int num = s[i] - '0'; //intに変換
 		cnt[num]++;
+    // cout << num << cnt[num] << endl;
+
 	}
 	cnt[0] = 0;
 	for (int i = 104; i < 1000; i += 8) {
