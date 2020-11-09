@@ -3,25 +3,47 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  string n;
+  ll n;
   cin >> n;
-  vector<int> num(n.length());
-  int sum = 0, ans = 0;
-  for (int i = 0; i < n.length(); i++) {
-    num[i] = n[i] - '0';
-    sum += num[i];
+  vector<int> num(3);
+
+  while (n) {
+    num[n % 10 % 3]++;
+    n /= 10;
   }
-  if(sum % 3 == 0){
+  int x = (num[1] + num[2] * 2) % 3;
+  int k = num[0] + num[1] + num[2];
+  if(x == 0){
     cout << 0 << endl;
-    return 0;
-  }
-  if(sum % 3 != 0){
-    if(sum <= 2){
-      cout << -1 << endl;
-      return 0;
+  } else if (x == 1) {
+    if (num[1]) {
+      if (k == 1) {
+        cout << -1 << endl;
+      } else {
+        cout << 1 << endl;
+      }
+    } else {
+      if (k == 2) {
+        cout << -1 << endl;
+      } else {
+        cout << 2 << endl;
+      }
     }
-
-
+  } else {
+    if (num[2]) {
+      if (k == 1) {
+        cout << -1 << endl;
+      } else {
+        cout << 1 << endl;
+      }
+    } else {
+      if (k == 2) {
+        cout << -1 << endl;
+      } else {
+        cout << 2 << endl;
+      }
+    }
+  }
 
   return 0;
 }
