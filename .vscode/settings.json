@@ -1,0 +1,16 @@
+{
+  "code-runner.runInTerminal": true,
+  "editor.formatOnSave": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "code-runner.executorMap": {
+    "cpp": "/Users/yamamotoayaka/vsc_run/cpp.sh"
+  },
+  "files.associations": {
+    "ostream": "cpp",
+    "iostream": "cpp",
+    "cmath": "cpp",
+    "iosfwd": "cpp",
+    "ratio": "cpp"
+  }
+}
