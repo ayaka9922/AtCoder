@@ -8,6 +8,6 @@ int main() {
   double r = l / 3;
   double ans = 0;
   ans = r * r * r;
-  printf("%.9f", ans);
+  printf("%.9f\n", ans);
   return 0;
 }

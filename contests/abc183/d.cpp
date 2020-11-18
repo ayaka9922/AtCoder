@@ -23,6 +23,6 @@ int main() {
       return 0;
     }
   }
-  cout <<  << endl;
+  cout << "Yes" << endl;
   return 0;
 }
