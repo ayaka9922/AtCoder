@@ -13,5 +13,6 @@
     "iosfwd": "cpp",
     "ratio": "cpp"
   },
-  "C_Cpp.errorSquiggles": "Disabled"
+  "C_Cpp.errorSquiggles": "Disabled",
+  "C_Cpp.clang_format_style": "{BasedOnStyle: Google, IndentWidth: 2}"
 }
