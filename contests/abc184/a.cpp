@@ -3,9 +3,9 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  int a, b;
-  cin >> a >> b;
-  cout << 2 * a + 100 - b << endl;
+  int a, b, c, d;
+  cin >> a >> b >> c >> d;
+  cout << a * d - (b * c) << endl;
 
   return 0;
 }
