@@ -3,8 +3,11 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  int r1, c1, r2, c2;
-  cin >> r1 >> c1 >> r2 >> c2;
-  cout << 2 * a + 100 - b << endl;
+  int n, r;
+  cin >> n >> r;
+  if (n < 10) {
+    r += 100 * (10 - n);
+  }
+  cout << r << endl;
   return 0;
 }
