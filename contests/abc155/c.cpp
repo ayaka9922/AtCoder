@@ -11,7 +11,7 @@ int main() {
     cin >> s[i];
     sx.insert(s[i]);
   }
-
-  cout << r << endl;
+  int ans = 0;
+  i cout << ans << endl;
   return 0;
 }
