@@ -3,16 +3,13 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  int h;
+  ll h;
   cin >> h;
-  if (n <= k) {
-    cout << 0 << endl;
-    return 0;
-  }
-  sort(h.begin(), h.end());
-  ll ans = 0;
-  for (int i = 0; i < n - k; i++) {
-    ans += h[i];
+  ll ans = 1, cnt = 1;
+  while (h != 1) {
+    h /= 2;
+    ans += cnt;
+    cnt *= 2;
   }
   cout << ans << endl;
   return 0;
