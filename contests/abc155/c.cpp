@@ -5,13 +5,17 @@ using ll = long long;
 int main() {
   int n;
   cin >> n;
-  vector<string> s(n);
-  set<string> sx(n);
+  map<string, int> mp;
   for (int i = 0; i < n; i++) {
-    cin >> s[i];
-    sx.insert(s[i]);
+    string s;
+    cin >> s;
+    mp[s]++;
   }
-  int ans = 0;
-  i cout << ans << endl;
+  int mx = 0;
+  for (auto p : mp) mx = max(mx, p.second);  // secondはmapの値
+  for (auto p : mp) {
+    if (p.second != mx) continue;
+    cout << p.first << endl;  // firstはmapのkey
+  }
   return 0;
 }
