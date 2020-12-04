@@ -16,12 +16,12 @@ int main() {
     cin >> a >> b;
     a--;
     b--;
-    cnt[a] = max(cnt[a], h[b]);
+    cnt[a] = max(cnt[a], h[b]);  //展望台aから行けるところのmaxをとる
     cnt[b] = max(cnt[b], h[a]);
   }
 
   for (int i = 0; i < n; i++) {
-    ans += h[i] > cnt[i];
+    if (h[i] > cnt[i]) ans++;
   }
 
   cout << ans << endl;
