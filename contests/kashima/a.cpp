@@ -2,16 +2,21 @@
 using namespace std;
 using ll = long long;
 
+ll gcd(ll a, ll b) {
+  if (a % b == 0) {
+    return (b);
+  } else {
+    return (gcd(b, a % b));
+  }
+}
+
 int main() {
   int n;
   cin >> n;
   ll ans = 1;
-  int i = 0;
-  int so[]={ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
-  while(so[i] <n){
-    ans *= so[i];
-    i++;
+  for (int i = 2; i <= n; i++) {
+    ans = ans * i / gcd(ans, i);
   }
-  cout << ans*n +1<< endl;
+  cout << ans + 1 << endl;
   return 0;
 }
