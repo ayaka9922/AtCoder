@@ -3,18 +3,16 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  int n;
+  ll n;
   cin >> n;
-  for (int i = 1; i < 10; i++) {
-    for (int j = 1; j < 10; j++) {
-      int k;
-      k = i * j;
-      if (k == n) {
-        cout << "Yes" << endl;
-        return 0;
-      }
+  ll cnt = 1;
+  for (ll i = 2; i <= sqrt(n); i++) {
+    if (n % i == 0) {
+      cnt = i;
     }
   }
-  cout << "No" << endl;
+  ll ans = 0;
+  ans = cnt + n / cnt - 2;
+  cout << ans << endl;
   return 0;
 }
