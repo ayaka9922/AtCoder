@@ -3,15 +3,18 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  int n;
-  cin >> n;
-  vector<int> d(n);
-  for (int i = 0; i < n; i++) {
-    cin >> d[i];
+  int n, l;
+  cin >> n >> l;
+  int mn = 100, tmp = 0;
+  for (int i = 1; i <= n; i++) {
+    mn = min(mn, abs(l + i - 1));
+    if (mn == abs(l + i - 1)) tmp = l + i - 1;
   }
-  sort(d.begin(), d.end());
-  int cnt = 0;
-  cnt = d[n / 2] - d[n / 2 - 1];
-  cout << cnt << endl;
+  int ans = 0;
+  for (int i = 1; i <= n; i++) {
+    ans += l + i - 1;
+  }
+  ans -= tmp;
+  cout << ans << endl;
   return 0;
 }
