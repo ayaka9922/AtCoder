@@ -6,10 +6,13 @@ int main() {
   int n, x;
   cin >> n >> x;
   vector<int> l(n + 1);
-  for (int i = 0; i < n + 1; i++) {
+  int d = 0;
+  int cnt = 1;
+  for (int i = 0; i < n; i++) {
     cin >> l[i];
+    d += l[i];
+    if (d <= x) cnt++;
   }
-
-  cout << 10 << endl;
+  cout << cnt << endl;
   return 0;
 }
