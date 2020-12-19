@@ -5,11 +5,24 @@ using ll = long long;
 int main() {
   int n;
   cin >> n;
-  int cnt = 0;
-  int i = 1;
-  while (n >= i) {
-    if (n < 700) i++;
+  vector<int> a(n + 1);
+  for (int i = 1; i <= n; i++) {
+    a[i] = 1;
+    int m = i;
+    while (m) {
+      if (m % 10 == 7) a[i] = 0;
+      m /= 10;
+    }
+    m = i;
+    while (m) {
+      if (m % 8 == 7) a[i] = 0;
+      m /= 8;
+    }
   }
-  cout << n - j;
+  int cnt = 0;
+  for (int i = 1; i <= n; i++) {
+    if (a[i] == 1) cnt++;
+  }
+  cout << cnt << endl;
   return 0;
 }

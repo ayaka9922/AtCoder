@@ -13,9 +13,14 @@ int main() {
   ll sum = 0;
   int m = 1 - n;
   for (int i = 0; i < n; i++) {
-    sum += a[i] * m;
+    if (a[i] > 0) {
+      sum += a[i] * m;
+    } else {
+      a[i] = -a[i];
+      sum += a[i] * m;
+    }
     m += 2;
   }
-  cout << abs(sum);
+  cout << sum;
   return 0;
 }
