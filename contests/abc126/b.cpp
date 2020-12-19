@@ -3,11 +3,19 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  string s;
+  int s;
   cin >> s;
-  if (s / 100 > 12 && s % 100 > 12) {
+  int l, r;
+  l = s / 100;
+  r = s % 100;
+  if (l > 0 && l <= 12 && r > 0 && r <= 12) {
+    cout << "AMBIGUOUS" << endl;
+  } else if (l > 0 && l <= 12) {
+    cout << "MMYY" << endl;
+  } else if (r > 0 && r <= 12) {
+    cout << "YYMM" << endl;
+  } else {
     cout << "NA" << endl;
-  } else if (s / 100 > 0 && s / 100 <= 12 && s % 100 > 12) {
   }
   return 0;
 }
