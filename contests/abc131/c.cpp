@@ -2,16 +2,26 @@
 using namespace std;
 using ll = long long;
 
-int main() {
-  int a, b, c, d;
-  cin >> a >> b >> c >> d;
-  vector<int> d(n);
-  for (int i = 0; i < n; i++) {
-    cin >> d[i];
+ll gcd(int a, int b) {
+  if (a > b) swap(a, b);
+  if (b % a == 0) {
+    return a;
+  } else {
+    return gcd(a, b % a);
   }
-  sort(d.begin(), d.end());
-  int cnt = 0;
-  cnt = d[n / 2] - d[n / 2 - 1];
-  cout << cnt << endl;
+}
+
+ll lcm(int a, int b) { return a / gcd(a, b) * b; }
+
+int main() {
+  ll a, b;
+  ll c, d;
+  cin >> a >> b >> c >> d;
+  a = a - 1;
+  ll sb = b / c + b / d - b / lcm(c, d);
+  ll sa = a / c + a / d - a / lcm(c, d);
+  ll ans = sb - sa;
+  ll num = b - a;
+  cout << num - ans << endl;
   return 0;
 }

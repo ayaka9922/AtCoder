@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define rep(i, n) for (int i = 0; i < (n); i++)
 using namespace std;
 using ll = long long;
 
@@ -6,19 +7,16 @@ int main() {
   int n;
   cin >> n;
   vector<int> p(n), q(n);
-  for (int i = 0; i < n; i++) {
-    cin >> p[i];
-  }
-  for (int i = 0; i < n; i++) {
-    cin >> q[i];
-  }
-  cin >> n >> s;
-  int cnt = 0;
-  for (int i = 0; i < n - 2; i++) {
-    if (s[i] == 'A' && s[i + 1] == 'B' && s[i + 2] == 'C') {
-      cnt++;
-    }
-  }
-  cout << cnt << endl;
+  rep(i, n) cin >> p[i];
+  rep(i, n) cin >> q[i];
+  vector<int> a(n);
+  rep(i, n) a[i] = i + 1;
+  map<vector<int>, int> mp;
+  int ans = 0;
+  do {
+    mp[a] = mp.size();
+  } while (next_permutation(a.begin(), a.end()));
+  ans = abs(mp[p] - mp[q]);
+  cout << ans << endl;
   return 0;
 }

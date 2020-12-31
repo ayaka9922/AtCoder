@@ -2,26 +2,41 @@
 using namespace std;
 using ll = long long;
 
-int main() {
-  ll a, b, c;
-  cin >> a >> b >> c;
-  a %= 998244353;
-  b %= 998244353;
-  c %= 998244353;
-  if(a > b) swap(a, b);
-  if(a > c) swap(a, c);
-  if(b > c) swap(b, c);
+const int INF = 1001001001;
 
-  ll ans = 0;
-  for (int i = 1; i <= a; i++){
-    for (int j = 1; j <= b; j++){
-      ans += i * j * (1+c) * c / 2;
-      ans %= 998244353;
+int main() {
+  int n, m, x;
+  cin >> n >> m >> x;
+  vector<int> c(n);
+  int a[n][m];
+  for (int i = 0; i < n; i++) {
+    cin >> c[i];
+    for (int j = 0; j < m; j++) {
+      cin >> a[i][j];
     }
   }
-  ans %= 998244353;
 
-  cout << ans << endl;
-
+  int ans = INF;
+  for (int s = 0; s < (1 << n); s++) {
+    int cost = 0;
+    vector<int> d(m);
+    for (int i = 0; i < n; i++) {
+      if ((s >> i) & 1) {
+        cost += c[i];
+        for (int j = 0; j < m; j++) {
+          d[j] += a[i][j];
+        }
+      }
+      bool ok = true;
+      for (int j = 0; j < m; j++) {
+        if (d[j] < x) ok = false;
+      }
+      if (ok) ans = min(ans, cost);
+    }
+  }
+  if (ans == INF)
+    cout << -1 << endl;
+  else
+    cout << ans << endl;
   return 0;
 }
