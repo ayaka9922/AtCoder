@@ -3,17 +3,19 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  ll n;
+  int n;
   cin >> n;
-  string ans;
-
-  while(n){
-    --n;
-    ans += (char)(97 + n % 26);
-    n /= 26;
+  vector<int> a(n);
+  for (int i = 0; i < n; i++) {
+    cin >> a[i];
   }
-  reverse(ans.begin(),ans.end());
-
+  int q;
+  cin >> q;
+  vector<int> b(q);
+  vector<int> c(q);
+  for (int i = 0; i < q; i++) {
+    cin >> b[i] >> c[i];
+  }
   cout << ans << endl;
   return 0;
 }
